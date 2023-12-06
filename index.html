@@ -14,7 +14,9 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      overflow: hidden; /* Hide all scrollbars */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Ensure the body takes at least the full viewport height */
     }
 
     header {
@@ -28,6 +30,7 @@
       margin: 2em;
       text-align: center;
       color: #333; /* Adjust text color for better visibility on the background image */
+      flex-grow: 1; /* Allow the section to grow to fill available space */
     }
 
     .intro-text {
@@ -39,6 +42,8 @@
       flex-direction: column;
       align-items: center;
       margin-top: 2em;
+      max-height: 100vh; /* Added maximum height for smaller screens */
+      overflow: hidden; /* Added overflow for scrolling on smaller screens */
     }
 
     .option, .resource-button {
@@ -63,16 +68,6 @@
       color: #fff;
       text-align: center;
       padding: 1em;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    /* Responsive styles */
-    @media only screen and (max-width: 600px) {
-      .option, .resource-button {
-        width: 100%; /* Full width on smaller screens */
-      }
     }
   </style>
 </head>
@@ -81,22 +76,24 @@
   <header>
     <h1>Veterans Psychedelic Integration Coaches and Support</h1>
     <div class="intro-text">
-      <p>This community is for veterans, by veterans. Join us on a journey of support and integration in the psychedelic space.</p>
+      <p>This community is for veterans by veterans. Join us on a journey of support and integration in the psychedelic space.</p>
     </div>
   </header>
 
   <section>
     <div class="options">
       <div class="option" onclick="window.location.href='search.html'">
-        <h3>Looking for a Coach</h3>
-        <p>Connect with a veteran coach or peer for support in the psychedelic space.</p>
+        <h3>Looking for Support?</h3>
+        <p>Connect with veteran coaching or peer support in the psychedelic space.</p>
       </div>
       <div class="option" onclick="window.location.href='connect.html'">
-        <h3>Coaches Connect</h3>
-        <p>Join our community as a coach or peer supporter for weekly consultation calls and more.</p>
+        <h3>Are you a Coach or Peer Supporter?</h3>
+        <p>Join our community of veterans as a coach or peer supporter for weekly consultation calls, referrals, and more.</p>
       </div>
 
       <button class="resource-button" onclick="window.location.href='resource.html'">Explore Resources</button>
+      <button class="resource-button" onclick="window.location.href='about.html'">About VPICS</button>
+
     </div>
   </section>
 
